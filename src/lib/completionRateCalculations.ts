@@ -92,8 +92,6 @@ export function calculateMonthlyCompletionRate(
 
 export function calculateOverallCompletionRate(
   checkIns: CheckIn[]
-export function calculateOverallCompletionRate(
-  checkIns: CheckIn[]
 ): number {
   if (checkIns.length === 0) return 0
 
