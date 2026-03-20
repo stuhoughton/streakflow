@@ -60,6 +60,23 @@ export const useAuthStore = create<AuthStore>((set) => ({
       })
       if (error) throw error
       if (data.user) {
+        // Insert user into users table
+        const { error: userError } = await supabase
+          .from('users')
+          .insert([
+            {
+              id: data.user.id,
+              email: data.user.email || '',
+              timezone: 'UTC',
+              theme: 'dark',
+            },
+          ])
+        
+        if (userError) {
+          console.warn('Failed to create user record:', userError)
+          // Don't throw - auth succeeded even if user record failed
+        }
+
         set({
           user: {
             id: data.user.id,
