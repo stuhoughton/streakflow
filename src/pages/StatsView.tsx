@@ -12,6 +12,8 @@ import {
   calculateMonthlyCompletionRate,
 } from '../lib/completionRateCalculations'
 
+import { Habit } from '../types'
+
 export default function StatsView() {
   const { habits, fetchHabits, isLoading: habitsLoading } = useHabitsStore()
   const { checkIns, fetchCheckIns, isLoading: checkInsLoading } =
@@ -27,7 +29,7 @@ export default function StatsView() {
   // Calculate overall stats
   let overallCurrentStreak = 0
   let overallLongestStreak = 0
-  let bestStreakHabit: (typeof activeHabits)[number] | null = null
+  let bestStreakHabit: Habit | null = null
 
   activeHabits.forEach((habit) => {
     const habitCheckIns = checkIns.filter((ci) => ci.habit_id === habit.id)
