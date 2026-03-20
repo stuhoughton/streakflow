@@ -1,40 +1,9 @@
 import { create } from 'zustand'
 import { supabase } from '../lib/supabase'
+import { Habit, CreateHabitInput, UpdateHabitInput } from '../types'
 
-export interface Habit {
-  id: string
-  user_id: string
-  name: string
-  emoji: string
-  color_tag: string
-  habit_type: 'boolean' | 'quantity'
-  target_quantity?: number
-  target_unit?: string
-  target_days: string[]
-  reminder_time?: string
-  is_archived: boolean
-  created_at: string
-  updated_at: string
-}
-
-export interface CreateHabitInput {
-  name: string
-  emoji: string
-  color_tag: string
-  habit_type: 'boolean' | 'quantity'
-  target_quantity?: number
-  target_unit?: string
-  target_days: string[]
-  reminder_time?: string
-}
-
-export interface UpdateHabitInput {
-  name?: string
-  emoji?: string
-  color_tag?: string
-  target_days?: string[]
-  reminder_time?: string
-}
+// Re-export types for backward compatibility
+export type { Habit, CreateHabitInput, UpdateHabitInput }
 
 interface HabitsStore {
   habits: Habit[]
