@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { persist, PersistStorage } from 'zustand/middleware'
 
 type SortBy = 'created' | 'current_streak' | 'longest_streak'
 
@@ -12,7 +12,7 @@ interface UIStore {
   toggleArchivedHabits: () => void
 }
 
-export const useUIStore = create<UIStore>(
+export const useUIStore = create<UIStore>()(
   persist(
     (set) => ({
       theme: 'dark',
