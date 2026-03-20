@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { Habit, CreateHabitInput } from '../types'
+import { useState } from 'react'
+import { CreateHabitInput } from '../types'
 
 const DAYS_OF_WEEK = [
   'Monday',

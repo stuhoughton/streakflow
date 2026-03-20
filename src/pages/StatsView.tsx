@@ -27,7 +27,7 @@ export default function StatsView() {
   // Calculate overall stats
   let overallCurrentStreak = 0
   let overallLongestStreak = 0
-  let bestStreakHabit = null
+  let bestStreakHabit: typeof activeHabits[0] | null = null
 
   activeHabits.forEach((habit) => {
     const habitCheckIns = checkIns.filter((ci) => ci.habit_id === habit.id)

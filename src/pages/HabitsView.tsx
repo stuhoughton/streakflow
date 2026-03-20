@@ -15,13 +15,11 @@ export default function HabitsView() {
     habits,
     fetchHabits,
     createHabit,
-    updateHabit,
     deleteHabit,
     isLoading,
   } = useHabitsStore()
   const { checkIns, fetchCheckIns } = useCheckInsStore()
   const [showForm, setShowForm] = useState(false)
-  const [editingId, setEditingId] = useState<string | null>(null)
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [showArchived, setShowArchived] = useState(false)
   const [error, setError] = useState('')
@@ -126,7 +124,6 @@ export default function HabitsView() {
                   habit={habit}
                   checkIns={checkIns}
                   onCheckIn={() => {}}
-                  onEdit={() => setEditingId(habit.id)}
                   onDelete={() => setDeletingId(habit.id)}
                 />
               </div>

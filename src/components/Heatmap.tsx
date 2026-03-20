@@ -23,16 +23,6 @@ export default function Heatmap({ checkIns, habitName }: HeatmapProps) {
     }
     return `${dateStr}: Not completed`
   }
-
-  const monthLabels = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
     'Sep',
     'Oct',
     'Nov',

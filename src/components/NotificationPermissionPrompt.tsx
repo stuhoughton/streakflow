@@ -14,6 +14,7 @@ export default function NotificationPermissionPrompt() {
       }, 3000)
       return () => clearTimeout(timer)
     }
+    return undefined
   }, [])
 
   const handleRequestPermission = async () => {
