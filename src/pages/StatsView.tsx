@@ -94,7 +94,7 @@ export default function StatsView() {
                 />
                 {bestStreakHabit ? (
                   <div className="text-sm text-slate-400">
-                    Best streak: {bestStreakHabit.emoji} {bestStreakHabit.name}
+                    Best streak: {(bestStreakHabit as Habit).emoji} {(bestStreakHabit as Habit).name}
                   </div>
                 ) : null}
               </div>
