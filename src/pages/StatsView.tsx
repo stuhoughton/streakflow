@@ -91,11 +91,11 @@ export default function StatsView() {
                   longestStreak={overallLongestStreak}
                   size="lg"
                 />
-                {bestStreakHabit && (
+                {bestStreakHabit ? (
                   <div className="text-sm text-slate-400">
                     Best streak: {bestStreakHabit.emoji} {bestStreakHabit.name}
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
 
