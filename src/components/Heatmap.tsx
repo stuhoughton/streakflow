@@ -23,11 +23,6 @@ export default function Heatmap({ checkIns, habitName }: HeatmapProps) {
     }
     return `${dateStr}: Not completed`
   }
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
 
   return (
     <div className="bg-slate-900 rounded-lg p-4 border border-slate-700 overflow-x-auto">

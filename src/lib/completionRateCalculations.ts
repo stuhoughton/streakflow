@@ -92,10 +92,11 @@ export function calculateMonthlyCompletionRate(
 
 export function calculateOverallCompletionRate(
   checkIns: CheckIn[]
+export function calculateOverallCompletionRate(
+  checkIns: CheckIn[]
 ): number {
   if (checkIns.length === 0) return 0
 
   const completed = checkIns.filter((ci) => ci.completed).length
   return Math.round((completed / checkIns.length) * 100)
-}
 }
